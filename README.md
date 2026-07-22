@@ -1,4 +1,4 @@
-# AI-Quant-Roadmap
+# AI-Quant-Wiki
 
 从大模型底层、RAG、Agent、多模态，到金融工程和机器学习金融的系统学习路线。
 
