@@ -36,13 +36,14 @@ Agent 将模型置于“观察—决策—调用工具—更新状态”的循�
 ## 6. 推荐开源仓库
 
 - [smolagents](https://github.com/huggingface/smolagents)：Hugging Face 的轻量 Agent 库。
-- [AutoGen](https://github.com/microsoft/autogen)：Microsoft 的事件驱动 Agent 框架。
+- [AutoGen](https://github.com/microsoft/autogen)：已进入维护模式的事件驱动 Agent 框架，可用于阅读已有系统和理解消息运行时。
+- [Microsoft Agent Framework](https://github.com/microsoft/agent-framework)：Microsoft 面向新项目推荐的后续框架，连接 Agent、工具与多步工作流。
 - [LangGraph](https://github.com/langchain-ai/langgraph)：用图和状态构建长运行工作流的官方仓库。
 
 ## 7. 推荐课程和官方文档
 
 - [smolagents Documentation](https://huggingface.co/docs/smolagents/)：工具、Agent 和执行模型说明。
-- [AutoGen Documentation](https://microsoft.github.io/autogen/stable/)：Agent、消息和运行时文档。
+- [AutoGen → Microsoft Agent Framework 迁移指南](https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/)：新旧抽象、工具与工作流的官方迁移说明。
 - [LangGraph Documentation](https://docs.langchain.com/oss/python/langgraph/overview)：状态图和持久化工作流入口。
 
 ## 8. 建议实践

@@ -51,7 +51,7 @@ Context Engineering 将提示、检索证据、工具结果、记忆和会话状
 
 ## 9. 与其他主题的关系
 
-本章接收 [RAG](09-rag.md) 的证据并为 [Agent](11-agent.md) 编排状态、工具结果和记忆；KV Cache 的系统实现与 [训练系统](06-training-systems.md) 中的内存和吞吐分析相连。
+本章接收 [RAG](09-rag.md) 的证据并为 [Agent](11-agent.md) 编排状态、工具结果和记忆；KV Cache 的系统实现与 [训练系统](06-training-systems.md) 中的内存和吞吐分析相连。推理侧的 Prefill/Decode、批处理、量化、延迟和服务压测见 [推理与服务](14-inference-and-serving.md)，本章重点仍是选择和组织上下文。
 
 ## 10. 常见误区
 

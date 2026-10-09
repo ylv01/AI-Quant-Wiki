@@ -32,7 +32,7 @@
 |---|---|---|---|---|
 | CUDA C++ Programming Guide | NVIDIA | GPU / CUDA | 执行模型、内存和 Kernel | [官方文档](https://docs.nvidia.com/cuda/cuda-c-programming-guide/) |
 | PyTorch Distributed Overview | PyTorch | 分布式训练 | DDP、FSDP、Tensor Parallel 与 RPC 入口 | [官方文档](https://pytorch.org/tutorials/beginner/dist_overview.html) |
-| DeepSpeed Documentation | Microsoft | 大模型训练 | ZeRO、配置、并行和推理 | [官方文档](https://www.deepspeed.ai/docs/) |
+| DeepSpeed Documentation | DeepSpeed Project | 大模型训练 | ZeRO、配置、并行和推理 | [官方文档](https://www.deepspeed.ai/docs/) |
 
 ## 金融工程与数据
 

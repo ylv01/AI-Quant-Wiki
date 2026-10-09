@@ -82,6 +82,12 @@ CNN → Vision Transformer → CLIP → Vision Encoder → Projector → Multimo
 
 从视觉表征和跨模态对齐开始，再进入生成、文档和 Agent 场景。详见 [多模态](docs/ai/13-multimodal.md)。
 
+### 阶段 14：推理与服务部署
+
+Prefill → Decode → KV Cache → PagedAttention → Continuous Batching → Prefix Caching → Quantization → Speculative Decoding → TTFT → TPOT → Tail Latency → Serving Benchmark
+
+先冻结模型与生成语义，再比较缓存、批处理和优化对延迟、吞吐、显存与质量的影响。本阶段可在 Transformer 与 Context 基础后提前进入。详见 [推理与服务部署](docs/ai/14-inference-and-serving.md)。
+
 ## B. 金融工程路线
 
 ### 阶段 1：金融市场基础
@@ -172,7 +178,7 @@ MLP → CNN for Time Series → RNN → LSTM → GRU → TCN → Autoencoder →
 
 ### 阶段 7：金融 Transformer
 
-Time-Series Tokenization → Positional Encoding → Temporal Attention → Cross-Asset Attention → Patch-based Modeling → Multi-scale Modeling → Causal Mask → Forecasting → Classification → Financial Language Models → Multimodal Financial Models
+Time-Series Tokenization → Positional Encoding → Temporal Attention → Cross-Asset Attention → Patch-based Modeling → Multi-scale Modeling → Causal Mask → Forecasting → Classification → Time-Series Foundation Models → Zero-Shot Forecasting → Financial Language Models → Multimodal Financial Models
 
 区分时间、资产和模态三个维度的注意力与信息可用边界。详见 [金融 Transformer](docs/ml-finance/07-transformers-for-finance.md)。
 

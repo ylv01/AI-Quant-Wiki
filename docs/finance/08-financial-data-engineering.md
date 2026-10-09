@@ -40,18 +40,23 @@
 - [Apache Arrow](https://github.com/apache/arrow)：列式内存格式和多语言数据工具箱。
 - [DuckDB](https://github.com/duckdb/duckdb)：适合本地分析 Parquet 的嵌入式分析数据库。
 - [Qlib](https://github.com/microsoft/qlib)：含数据层、工作流、训练和回测的量化平台。
+- [fredapi](https://github.com/mortada/fredapi)：Mortada Mehyar 的 FRED/ALFRED Python 客户端原仓库，可读取初次发布与历史修订版本；需要 FRED API key。
 
 ## 7. 推荐课程和官方文档
 
 - [Apache Arrow Parquet Documentation](https://arrow.apache.org/docs/python/parquet.html)：Parquet 读写、分区和数据集接口。
 - [DuckDB Documentation](https://duckdb.org/docs/stable/)：SQL、Parquet 扫描和数据导入参考。
-- [Qlib Data Layer](https://qlib.readthedocs.io/en/latest/component/data.html)：量化数据层的官方说明。
+- [Qlib Point-in-Time Database](https://qlib.readthedocs.io/en/latest/advanced/PIT.html)：季度/年度财报的历史版本存储、查询和适用边界。
 
 ## 8. 建议实践
 
 - 将一份公开日线数据保存为带 Schema 和分区的 Parquet，并用 DuckDB 查询。
 - 对分红拆股样例同时生成原始价、复权因子和复权价，验证收益连续性。
 - 模拟迟到数据和修订数据，验证版本、质量报告和历史重放结果。
+- 参考 [fredapi 修订数据示例](https://github.com/mortada/fredapi/blob/d0a0ba3001ebbbceafdcbdd3eb23828f0537cdff/README.md#working-with-data-revisions)，比较 GDP 的初次发布、历史决策日可得版本与最新版本。对 `get_series_all_releases` 返回的记录先筛选 `realtime_start <= 决策日`，再按观测期选择最后一个可用版本；保留快照并区分日级 vintage 日期、实际发布时间与接收延迟。
+- 参考 [Qlib PIT 数据准备示例](https://github.com/microsoft/qlib/blob/54355232463878d2eebb91fe0ee5fa7fa1f5976c/scripts/data_collector/pit/README.md)，检查同一财报期间的多次发布如何进入历史查询。该示例在缺公告日时按季度 45 日或年度 90 日的日历偏移估算，需另行核对真实可用时间与数据修订完整性。
+
+现成客户端和 PIT 存储可作为最小实践的起点；它们不自动完成所有市场数据的历史版本审计。[fredapi 的 `get_series_as_of_date` 实现](https://github.com/mortada/fredapi/blob/d0a0ba3001ebbbceafdcbdd3eb23828f0537cdff/fredapi/fred.py)只筛除决策日之后的修订，仍可能返回同一观测期的多个版本，不能直接当作每期唯一的最终特征值。
 
 ## 9. 与其他主题的关系
 

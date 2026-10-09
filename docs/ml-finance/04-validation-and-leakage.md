@@ -37,17 +37,22 @@
 
 - [scikit-learn](https://github.com/scikit-learn/scikit-learn)：包含时间序列切分和模型选择基础设施。
 - [Qlib](https://github.com/microsoft/qlib)：提供基于时间区间的量化训练与回测工作流。
+- [arch](https://github.com/bashtage/arch)：Kevin Sheppard 的金融计量工具原仓库，提供时间序列 Bootstrap、SPA/RealityCheck、StepM 与 Model Confidence Set。
 
 ## 7. 推荐课程和官方文档
 
 - [scikit-learn TimeSeriesSplit](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html)：时间顺序交叉验证的官方接口说明。
 - [Qlib Workflow](https://qlib.readthedocs.io/en/latest/component/workflow.html)：任务、记录和工作流文档。
+- [arch Multiple Comparison Procedures](https://bashtage.github.io/arch/multiple-comparison/multiple-comparison-reference.html)：多个候选与基准的损失比较及相应检验接口。
 
 ## 8. 建议实践
 
 - 在同一模型上比较随机切分、普通时间切分和 Purged Walk-Forward。
 - 向特征中注入一个显式未来字段，验证审计是否能发现异常高分。
 - 构造成分股历史与当前成分股两个 Universe，比较生存偏差影响。
+- 参考 [arch 多模型比较示例](https://github.com/bashtage/arch/blob/3ff735de8fd37ed7164656e7ee38086cb7e26e11/examples/multiple-comparison_examples.ipynb)，固定随机种子，先生成零均值纯噪声候选收益，以零收益为预先指定的基准、负收益为损失；逐步增加候选数量，保存全部候选在同一评价期的损失矩阵。只在选择区间选取最佳候选，比较其样本内 Sharpe 与独立最终留出期表现，再运行 SPA/RealityCheck 或 StepM 检验。真实策略实验还需明确损失定义、时间依赖与基准，不能反复查看最终测试区间。
+
+这些开源检验可以补充策略搜索的统计评价，但不等同于 Deflated Sharpe Ratio 或 PBO/CSCV，也不自动实现 Purge/Embargo。DSR 与 PBO 仍需按原论文核验实现、记录全部试验及其依赖关系；任何统计检验都不能修复错误的 Point-in-Time 数据。
 
 ## 9. 与其他主题的关系
 

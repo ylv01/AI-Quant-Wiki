@@ -2,7 +2,7 @@
 
 从大模型底层、RAG、Agent、多模态，到金融工程和机器学习金融的系统学习路线。
 
-本仓库是中文为主的公开知识导航，整理推荐学习顺序以及可核验的论文、课程、官方文档和开源仓库。它包含各种教材、课程、论文原文。
+本仓库是中文为主的公开知识导航，整理推荐学习顺序以及可核验的论文、课程、官方文档和开源仓库。提供教材、课程与论文原文的官方入口。
 
 作者：ylv
 
@@ -11,7 +11,7 @@
 ### AI / LLM 路线
 
 基础 → Transformer → Token Engineering → 训练数据 → 预训练 → 训练系统  
-→ 微调 → 后训练 → RAG → Context Engineering → Agent → Agent Skills / MCP → 多模态
+→ 微调 → 后训练 → RAG → Context Engineering → Agent → Agent Skills / MCP → 多模态 → 推理与服务
 
 入口：[AI / LLM 路线](docs/ai/README.md)
 
@@ -48,11 +48,14 @@
 - [Transformer 与 LLM](resources/papers/transformer-and-llm.md)
 - [训练与扩展规律](resources/papers/training-and-scaling.md)
 - [微调与对齐](resources/papers/fine-tuning-and-alignment.md)
+- [推理后训练](resources/papers/reasoning-post-training.md)
+- [推理与服务](resources/papers/inference-and-serving.md)
 - [RAG 与上下文](resources/papers/rag-and-context.md)
 - [Agent 与 Skills](resources/papers/agents-and-skills.md)
 - [多模态](resources/papers/multimodal.md)
 - [金融工程](resources/papers/financial-engineering.md)
 - [机器学习金融](resources/papers/machine-learning-finance.md)
+- [时序基础模型](resources/papers/time-series-foundation-models.md)
 
 ## 开源仓库
 
@@ -63,6 +66,9 @@
 - [多模态](resources/repositories/multimodal.md)
 - [金融工程与数据](resources/repositories/financial-engineering.md)
 - [量化研究](resources/repositories/quantitative-finance.md)
+- [金融验证与执行实践](resources/repositories/financial-practice.md)
+- [时序基础模型](resources/repositories/time-series.md)
+- [推理与服务](resources/repositories/inference-and-serving.md)
 
 ## 课程、书籍与官方文档
 

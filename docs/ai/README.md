@@ -17,12 +17,13 @@
 11. [Agent](11-agent.md)：工具调用、规划、工作流、安全执行与评价。
 12. [Agent Skills、工具调用与 MCP](12-agent-skills.md)：能力封装、发现、路由、权限与协议。
 13. [多模态](13-multimodal.md)：视觉、文本、音频、视频和多模态 Agent。
+14. [推理与服务部署](14-inference-and-serving.md)：生成阶段、缓存、批处理、量化与服务测量。
 
 ## 建议入口
 
 - 具备机器学习基础：从 Transformer 开始，但应确认能独立写出反向传播与训练循环。
 - 具备 NLP 基础：从 Token Engineering 和 Decoder-only Transformer 开始。
-- 关注应用系统：先理解微调、检索和评价，再进入 RAG、Context 与 Agent。
+- 关注应用系统：先理解生成与评价，再结合推理与服务部署进入 RAG、Context 与 Agent；推理章节可在 Transformer 与 Context 基础后提前学习。
 - 关注训练基础设施：完成预训练最小闭环后进入训练系统，避免只学习并行名词。
 
 ## 与金融路线的交汇

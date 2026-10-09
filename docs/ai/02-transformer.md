@@ -34,15 +34,16 @@ Transformer 用注意力在序列位置之间传递信息。本章聚焦 Decoder
 
 ## 6. 推荐开源仓库
 
-- [minGPT](https://github.com/karpathy/minGPT)：原作者风格的紧凑 GPT 教学实现。
-- [nanoGPT](https://github.com/karpathy/nanoGPT)：适合追踪小型 GPT 的训练和生成代码路径。
+- [minGPT](https://github.com/karpathy/minGPT)：作者已标为半归档的紧凑 GPT 教学实现，适合阅读基础模型结构。
+- [nanoGPT](https://github.com/karpathy/nanoGPT)：经典小型 GPT 教学代码；原作者已标记弃用，适合阅读模型和训练循环。
+- [nanochat](https://github.com/karpathy/nanochat)：原作者维护的后续实验仓库，连接 Tokenizer、预训练、微调、评价与推理。
 - [Transformers](https://github.com/huggingface/transformers)：模型定义、训练和推理的官方框架仓库。
 
 ## 7. 推荐课程和官方文档
 
 - [Stanford CS224N](https://web.stanford.edu/class/cs224n/)：覆盖深度 NLP、注意力和 Transformer。
 - [Stanford CS336](https://cs336.stanford.edu/)：从零实现语言模型并连接数据、系统和扩展规律。
-- [PyTorch Transformer 教程](https://docs.pytorch.org/tutorials/beginner/transformer_tutorial.html)：官方序列建模示例。
+- [PyTorch Scaled Dot Product Attention 教程](https://docs.pytorch.org/tutorials/intermediate/scaled_dot_product_attention_tutorial.html)：用 SDPA 构建和分析注意力计算的官方实践。
 
 ## 8. 建议实践
 
