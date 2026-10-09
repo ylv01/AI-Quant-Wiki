@@ -38,18 +38,23 @@
 - [Qlib](https://github.com/microsoft/qlib)：包含信号、策略、执行和回测工作流。
 - [vectorbt](https://github.com/polakowo/vectorbt)：原作者维护的向量化研究和回测工具。
 - [backtrader](https://github.com/mementum/backtrader)：事件驱动的 Python 回测框架。
+- [arch](https://github.com/bashtage/arch)：提供时间序列 Bootstrap 与多模型比较方法，可评价 Sharpe 不确定性和策略搜索后的统计证据。
 
 ## 7. 推荐课程和官方文档
 
 - [Qlib Strategy and Backtest](https://qlib.readthedocs.io/en/latest/component/strategy.html)：组合策略与回测组件说明。
 - [vectorbt Documentation](https://vectorbt.dev/)：向量化信号、组合和记录文档。
-- [Backtrader Documentation](https://www.backtrader.com/docu/)：事件驱动回测组件参考。
+- [arch Bootstrap Examples](https://bashtage.github.io/arch/bootstrap/bootstrap_examples.html)：Sharpe 置信区间、随机种子与时间序列 Bootstrap 的官方示例。
 
 ## 8. 建议实践
 
 - 对一组手工可核算的价格和订单逐日验证现金、持仓和净值。
 - 在同一信号上逐项加入手续费、价差、滑点和成交量限制。
 - 对公司行动和期货换月构造单元测试，并输出逐笔归因。
+- 参考 [arch Sharpe Bootstrap 示例](https://github.com/bashtage/arch/blob/3ff735de8fd37ed7164656e7ee38086cb7e26e11/examples/bootstrap_examples.ipynb)，用适合时间依赖的 Stationary/Block Bootstrap 估计置信区间并固定随机种子。它评估统计不确定性，不自动完成 DSR 或 PBO；后两项仍需保存全部策略试验并按本章原论文核验实现。
+- 参考 [Qlib 嵌套决策执行示例](https://github.com/microsoft/qlib/blob/54355232463878d2eebb91fe0ee5fa7fa1f5976c/examples/nested_decision_execution/workflow.py)，比较同一组合目标在日频与更细执行频率下的成本前后绩效。再按 [Exchange 实现](https://github.com/microsoft/qlib/blob/54355232463878d2eebb91fe0ee5fa7fa1f5976c/qlib/backtest/exchange.py)显式配置成交量上限 `volume_threshold` 和冲击成本 `impact_cost`，改变订单规模、参与率上限与执行频率，报告实际成交、未成交和净值敏感性。
+
+Qlib 上述示例的手续费是演示配置，未设置成交量上限或冲击成本；`impact_cost` 默认值为 0。容量分析仍需对应市场的数据、成本校准和规模压力测试，K 线模拟也不还原队列与逐笔撮合。现成框架提供实验组件，不保证研究流程已经避免泄漏或能直接用于真实执行。
 
 ## 9. 与其他主题的关系
 

@@ -10,7 +10,7 @@
 4. [验证与防泄漏](04-validation-and-leakage.md)：时间切分、走步验证、清洗区间与偏差控制。
 5. [树模型](05-tree-models.md)：随机森林、提升树、解释、校准与参数搜索。
 6. [神经网络](06-neural-networks.md)：MLP、卷积、循环网络、TCN 与表征学习。
-7. [金融 Transformer](07-transformers-for-finance.md)：时间、资产、Patch、语言和多模态建模。
+7. [金融 Transformer](07-transformers-for-finance.md)：时间、资产、Patch、时序基础模型、语言和多模态建模。
 8. [回测](08-backtesting.md)：信号、头寸、成本、会计、换月和绩效归因。
 9. [组合构建](09-portfolio-construction.md)：排序、仓位、约束、中性化和再平衡。
 10. [生产 Pipeline](10-production-pipeline.md)：数据、训练、推理、执行、监控、重放与归因。
@@ -28,4 +28,4 @@
 - 金融工程提供资产、定价、组合、风险和市场机制约束。
 - AI / LLM 提供特征学习、Transformer、训练、RAG、多模态和 Agent 方法。
 
-集中资源见 [机器学习金融论文](../../resources/papers/machine-learning-finance.md) 与 [量化研究仓库](../../resources/repositories/quantitative-finance.md)。
+集中资源见 [机器学习金融论文](../../resources/papers/machine-learning-finance.md)、[量化研究仓库](../../resources/repositories/quantitative-finance.md)、[时序基础模型](../../resources/repositories/time-series.md) 与 [金融验证和执行实践](../../resources/repositories/financial-practice.md)。

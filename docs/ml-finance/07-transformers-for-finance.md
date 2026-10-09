@@ -17,6 +17,7 @@
 - Cross-Asset Attention、资产身份和动态图结构
 - Patch-based Modeling 与 Multi-scale Modeling
 - Forecasting、Classification 与预训练目标
+- Time-Series Foundation Models、Zero-shot Forecasting、协变量与概率预测
 - Financial Language Models、文本时间戳和实体对齐
 - Multimodal Financial Models：时序、文本、表格和图像
 
@@ -27,7 +28,8 @@
 3. 建立时间注意力基线，再加入多尺度结构。
 4. 将资产维度显式建模，处理上市、退市和缺失资产。
 5. 对齐新闻/公告的发布时间、实体与市场数据。
-6. 最后进入多模态，并与树模型、TCN 和简单注意力基线比较。
+6. 在相同时间切分下比较预训练时序模型的零样本预测和任务适配，核对预训练语料、模型 revision 与权重许可。
+7. 最后进入多模态，并与树模型、TCN 和简单注意力基线比较。
 
 ## 5. 核心论文
 
@@ -35,11 +37,19 @@
 - [A Time Series is Worth 64 Words](https://arxiv.org/abs/2211.14730)：PatchTST 的 Patch 与通道独立设计。
 - [FinBERT: Financial Sentiment Analysis with Pre-trained Language Models](https://arxiv.org/abs/1908.10063)：金融文本领域预训练与情感任务的代表性工作。
 
+- [A decoder-only foundation model for time-series forecasting](https://arxiv.org/abs/2310.10688)：TimesFM 的原始预训练与零样本预测路线。
+- [Chronos-2: From Univariate to Universal Forecasting](https://arxiv.org/abs/2510.15821)：扩展到多变量和协变量的预训练预测模型。
+
 ## 6. 推荐开源仓库
 
 - [PatchTST](https://github.com/yuqinie98/PatchTST)：论文作者发布的官方实现。
 - [Transformers](https://github.com/huggingface/transformers)：文本、时序和多模态 Transformer 接口。
 - [Qlib](https://github.com/microsoft/qlib)：统一数据、模型和回测的量化研究平台。
+
+- [TimesFM](https://github.com/google-research/timesfm)：Google Research 的时序预训练模型；开源实践基线选 TimesFM 2.5。
+- [Chronos](https://github.com/amazon-science/chronos-forecasting)：Amazon 的时序预训练模型与推理实现，包含 Chronos-2。
+
+模型、软件版本和权重许可分别记录；参考 [时序仓库索引](../../resources/repositories/time-series.md) 的固定基线，不把仓库代码许可自动应用到所有权重。
 
 ## 7. 推荐课程和官方文档
 
@@ -53,6 +63,9 @@
 - 用合成“未来脉冲”测试 Causal Mask、窗口构造和归一化是否泄漏。
 - 将带发布时间的新闻与资产对齐，比较文本单模态、时序单模态和融合模型。
 
+- 从官方 README 的推理示例开始，在同一预测目标、滚动窗口和预测长度上比较 TimesFM 2.5、Chronos-2 与朴素/线性基线。保存模型 revision、软件依赖、原始预测和按窗口划分的误差及分位数覆盖率。
+- 协变量按决策时点的可用性分类；只允许未来已知变量进入预测区间。先评估预测质量，再用统一成本和仓位规则评估交易结果。预训练数据范围未能核验时，记录这一限制。
+
 ## 9. 与其他主题的关系
 
 本章是 AI 与金融路线的主要交汇点：模型结构来自 [Transformer](../ai/02-transformer.md)，数据和评价受 [金融数据工程](../finance/08-financial-data-engineering.md) 与 [验证与防泄漏](04-validation-and-leakage.md) 约束，输出进入 [回测](08-backtesting.md)。
@@ -63,3 +76,5 @@
 - Cross-Asset Attention 若使用未来成分股会引入生存偏差。
 - 文本发布日期不一定等于市场可获得时间。
 - 注意力热图不能直接解释收益预测的因果来源。
+- 零样本预测不代表没有数据泄漏；冻结权重也不能排除预训练语料与测试期重叠。
+- 通用预测误差较低不等于金融策略有成本后的超额收益。

@@ -7,6 +7,8 @@
 - [Transformer 与 LLM](transformer-and-llm.md)
 - [训练与扩展规律](training-and-scaling.md)
 - [微调与对齐](fine-tuning-and-alignment.md)
+- [推理后训练](reasoning-post-training.md)
+- [推理与服务](inference-and-serving.md)
 - [RAG 与上下文](rag-and-context.md)
 - [Agent 与 Skills](agents-and-skills.md)
 - [多模态](multimodal.md)
@@ -15,6 +17,7 @@
 
 - [金融工程](financial-engineering.md)
 - [机器学习金融](machine-learning-finance.md)
+- [时序基础模型](time-series-foundation-models.md)
 
 ## 维护规则
 

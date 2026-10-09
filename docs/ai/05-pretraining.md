@@ -36,7 +36,8 @@
 
 ## 6. 推荐开源仓库
 
-- [nanoGPT](https://github.com/karpathy/nanoGPT)：紧凑的 GPT 训练、评估和采样实现。
+- [nanoGPT](https://github.com/karpathy/nanoGPT)：已标记弃用的经典 GPT 训练代码，适合分析最小训练循环。
+- [nanochat](https://github.com/karpathy/nanochat)：原作者维护的后续仓库，提供 Tokenizer、预训练、微调、评价和推理的实验流程。
 - [llm.c](https://github.com/karpathy/llm.c)：用 C/CUDA 展示 GPT 训练底层路径的原作者仓库。
 - [PyTorch](https://github.com/pytorch/pytorch)：优化器、混合精度和检查点能力的官方实现。
 
